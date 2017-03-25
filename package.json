@@ -1,0 +1,17 @@
+{
+  "name": "vquizapi",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "SangND",
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "dependencies": {
+    "axios": "^0.15.3",
+    "cors": "^2.8.1",
+    "express": "^4.15.2",
+    "lodash": "^4.17.4",
+    "nodemon": "^1.11.0"
+  }
+}
