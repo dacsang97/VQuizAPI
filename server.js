@@ -18,8 +18,9 @@ function genArr(len) {
 }
 
 function parseData(data) {
-    const result = {};
-    result.created_by = data.created_by;
+    let result = {};
+    result = _.pick(data, ['title','created_date', 'modified_date', 'creator'])
+    result.creator = data.creator;
     result.list = [];
     data.terms.forEach(function(item){
         const { definition } = item;
