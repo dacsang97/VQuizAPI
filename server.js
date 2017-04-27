@@ -23,8 +23,8 @@ function parseData(data) {
     result.creator = data.creator;
     result.list = [];
     data.terms.forEach(function(item){
-        const { definition } = item;
-        const temp = definition.split("__\n");
+        const { term } = item;
+        const temp = term.split("__\n");
         let [question, answers, image] = temp;
         answers = answers.split("\n").filter(function(item){
             return item !== ''
@@ -35,7 +35,7 @@ function parseData(data) {
         let l = answers.length;
         let shuffleArr = genArr(l);
         shuffleArr = _.shuffle(shuffleArr);
-        let trueAns = shuffleArr.indexOf(item.term.charCodeAt(0)-65);
+        let trueAns = shuffleArr.indexOf(item.definition.charCodeAt(0)-65);
         shuffleArr = shuffleArr.map(function(item){
             return answers[item];
         })
